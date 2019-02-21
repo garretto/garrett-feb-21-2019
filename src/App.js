@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   showAlert(alertText, alertType) {
-    clearTimeout(this.state.showAlert)
+    clearTimeout(this.state.alertTimeout)
     this.setState({
       alertText,
       alertType,
@@ -98,14 +98,15 @@ class App extends Component {
   onDelete(id) {
     let deleting = [...this.state.deleting, id]
     this.setState({ deleting })
-    deleteFile(id).then(res => {
-      this.showAlert('File deleted.', 'is-success')
-      this.refreshFiles()
-    })
-    .catch(err => {
-      this.showAlert('File not deleted.', 'is-danger')
-      this.refreshFiles()
-    })
+    deleteFile(id)
+      .then(res => {
+        this.showAlert('File deleted.', 'is-success')
+        this.refreshFiles()
+      })
+      .catch(err => {
+        this.showAlert('File not deleted.', 'is-danger')
+        this.refreshFiles()
+      })
   }
 
   handleSearchChange(event) {

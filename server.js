@@ -19,8 +19,8 @@ let nextId = 7
 const db = {
   file: [
     {
-      name: '3xZABZJUS8WfMVgYbWcmLA.jpg',
-      size: 2928324,
+      name: '<script>alert("hi")</script>',
+      size: 3928324,
       id: 0,
     },
     {
@@ -96,23 +96,33 @@ app.get('/file', function(req, res) {
 app.get('/file/:id', function(req, res) {
   const id = parseInt(req.params.id, 10)
 
+  let fileIndex = null
   db.file.forEach((file, index) => {
     if (file.id === id) {
-      return res.status(200).send(file)
+      fileIndex = index
     }
   })
 
-  res.status(404).send({})
+  if (fileIndex !== null) {
+    return res.status(200).send(db.file[fileIndex])
+  }
+
+  return res.status(404).send({})
 })
 
 app.delete('/file/:id', function(req, res) {
   const id = parseInt(req.params.id, 10)
+  let fileIndex = null
   db.file.forEach((file, index) => {
     if (file.id === id) {
-      db.file.splice(index, 1)
-      return res.status(200).send({})
+      fileIndex = index
     }
   })
+
+  if (fileIndex !== null) {
+    db.file.splice(fileIndex, 1)
+    return res.status(200).send({})
+  }
 
   return res.status(404).send({})
 })

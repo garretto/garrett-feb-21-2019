@@ -13,6 +13,7 @@ export function deleteFile(id) {
 }
 
 export function search(query) {
+  query = encodeURIComponent(query)
   return fetch(
     `${BASE_URL}file?q=${query}`
   ).then(checkOkJson)

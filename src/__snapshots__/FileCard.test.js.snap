@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="FileCard"
+>
+  <h2>
+    FileName.jpg
+  </h2>
+  <div
+    className="file-details"
+  >
+    <div
+      className="file-size"
+    >
+      1mb
+    </div>
+    <button
+      className="button is-danger is-outlined "
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "width": 80,
+        }
+      }
+    >
+      delete
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders deleting correctly 1`] = `
+<div
+  className="FileCard"
+>
+  <h2>
+    FileName.jpg
+  </h2>
+  <div
+    className="file-details"
+  >
+    <div
+      className="file-size"
+    >
+      1mb
+    </div>
+    <button
+      className="button is-danger is-outlined is-loading"
+      disabled={true}
+      onClick={[Function]}
+      style={
+        Object {
+          "width": 80,
+        }
+      }
+    >
+      delete
+    </button>
+  </div>
+</div>
+`;

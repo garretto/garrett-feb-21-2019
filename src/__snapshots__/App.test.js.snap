@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="Header"
+  >
+    <div
+      className="search control is-loading"
+    >
+      <input
+        className="input"
+        onChange={[Function]}
+        placeholder="Search documents"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="upload"
+    >
+      <input
+        disabled={false}
+        id="fileupload"
+        onChange={[Function]}
+        type="file"
+      />
+      <label
+        className="button is-link "
+        disabled={false}
+        htmlFor="fileupload"
+      >
+        UPLOAD
+      </label>
+    </div>
+  </div>
+  <div
+    className="FileList"
+  >
+    <div
+      className="file-list-header"
+    >
+      <h1>
+        0 Documents
+      </h1>
+      <div>
+        Total size: 
+        0b
+      </div>
+    </div>
+    <div
+      className="file-grid"
+    />
+  </div>
+</div>
+`;

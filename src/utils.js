@@ -1,6 +1,6 @@
 export function humanReadableSize(bytes) {
   bytes = Number(bytes)
-  if (bytes === 0) {
+  if (bytes === 0 || isNaN(parseFloat(bytes)) || !isFinite(bytes)) {
     return '0b'
   }
   const units = ['b', 'kb', 'mb']

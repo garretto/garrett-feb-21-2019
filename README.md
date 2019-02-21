@@ -64,7 +64,8 @@ Obviously this is not an exhuastive list, but:
   },
   "devDependencies": {
     "concurrently": "^4.1.0", // script to make it easy run frontend and backend at the same time
-    "nodemon": "^1.18.10" // auto reloads node on file changes
+    "nodemon": "^1.18.10", // auto reloads node on file changes
+    "react-test-renderer": "^16.8.2" // Used for snapshot testing with JEST
   }
 }
 ```

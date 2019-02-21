@@ -1,0 +1,28 @@
+@import 'shared.scss';
+
+.FileList {
+  margin: 0 $main-margins;
+  
+  @media (max-width: $mobile-size) {
+    margin: 0 $mobile-margins;
+  }
+
+  .file-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin: 0 0 20px 0;
+  }
+
+  h1 {
+    margin: 10px 25px 20px 0;
+    font-size: 40px;
+  }
+
+  .file-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}

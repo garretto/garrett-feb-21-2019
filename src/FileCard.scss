@@ -1,0 +1,56 @@
+@import 'shared';
+
+.FileCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 15px 25px;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 1px 1px #eee;
+  border-radius: 4px;
+
+  // 3 Columns
+  @media (min-width: 750px) {
+    flex: 0 1 calc(33.333333% - 10px);
+    max-width: calc(33.333333% - 10px); // necessary for ellipsis in h2
+    margin-right: 15px;
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+
+  // Two Columns
+  @media (max-width: 750px) {
+    flex: 0 1 calc(50% - 7.5px);
+    max-width: calc(50% - 7.5px); // necessary for ellipsis in h2
+    margin-right: 15px;
+    &:nth-of-type(2n) {
+      margin-right: 0;
+    }
+  }
+
+  // One Column on Mobile
+  @media (max-width: $mobile-size) {
+    flex: 1 1 100%;
+    max-width: 100%; // necessary for ellipsis in h2
+    margin-right: 0;
+  }
+
+  h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 0 20px 0;
+    font-size: 26px;
+  }
+
+  .file-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .file-size {
+    font-size: 16px;
+  }
+}

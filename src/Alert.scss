@@ -1,0 +1,13 @@
+@import 'shared';
+
+.Alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .notification div {
+    max-width: $main-max-width - 20px;
+    margin: 0 auto;
+  }
+}

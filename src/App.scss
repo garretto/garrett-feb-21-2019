@@ -1,0 +1,6 @@
+@import 'shared';
+
+.App {
+  max-width: $main-max-width + 2 * $main-margins;
+  margin: 0 auto;
+}

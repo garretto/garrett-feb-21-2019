@@ -1,5 +1,3 @@
-# File-Upload
-
 # Garrett - Feb 21, 2019
 
 ## Installation
@@ -23,15 +21,19 @@ Most vulnerabilities are with the mock API server, which I didn't spend too much
 
 ### Addressed
 
-- React automatically escapes inner html, so cannot have malicious file name
+- Avoids XSS: React automatically escapes inner html, so cannot have malicious file name for example.
+- JSON from server is parsed using `response.json()` (similar to `JSON.parse()`)
 - Basic escaping of user search query with encodeURIComponent
 - No URL parameters can be used to inject runnable code on the frontend, e.g. /?a=javascript:alert('hi')
 
 ### Not Addressed
 
-- Should use https
-- API currently does not check file size and file type, only frontend. Could potentially be buffer overflowed.
+- Should use https and HSTS once we have a domain
+- API currently does not check file size and file type, only frontend. Could also potentially be buffer overflowed.
 - Frontend does not check the shape of data from server before putting it into the state. I think this will just throw an error but potentially could be hacked somehow.
+- If we are going to publically host anyones files without authentication, should scan for malicious content after upload.
+- Should do more to prevent CSRF attacks, can use one-time codes for form submits
+- Not using Conternt Security Policy
 
 ## Improvements
 

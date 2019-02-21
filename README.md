@@ -47,7 +47,7 @@ Obviously this is not an exhuastive list, but:
 
 ## Libraries
 
-```json
+```javascript
 {
   "dependencies": {
     "body-parser": "^1.18.3", // API Server - to parse data in express
@@ -130,7 +130,7 @@ HTTP Code: 404
 
 The API server is intended to mock what I needed out of a basic REST API and doesn't reflect anything near production quality.
 
-I would have liked to have time to work more on the design.
+I would have liked to have had time to work more on the design.
 
 # Create React App Info
 
